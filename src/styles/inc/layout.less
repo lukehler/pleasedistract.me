@@ -50,7 +50,6 @@ body {
 #site-footer {
 	text-align: right;
 	font-size: @font-size-sm;
-	font-family: @heading-font;
 }
 
 details {
@@ -97,6 +96,7 @@ summary {
 	}
 }
 
+#noscript-alt,
 #recommendation {
 	font-size: @grid*2;
 	line-height: 1.8;
@@ -104,6 +104,9 @@ summary {
 	justify-content: space-between;
 	align-items: baseline;
 	font-family: @serif;
+}
+.no-js #recommendation {
+	display: none;
 }
 #refresh {
 	margin-left: @grid/2;
@@ -118,9 +121,11 @@ button,
 	display: inline-block;
 	padding: 0 0.5em;
 	margin-right: @grid;
-	font-family: @heading-font;
+	font-family: @sans;
 	font-size: @font-size-sm;
-	font-weight: bold;
+	font-weight: nomral;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 	border-radius: @border-radius;
 	color: @bg-color;
 	background-color: @text-color;
