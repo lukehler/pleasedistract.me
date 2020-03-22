@@ -1,0 +1,138 @@
+// Page layout
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+#top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+#site-header,
+#site-footer {
+	flex: 0 0 auto;
+	width: 100%;
+	padding: @grid/2 @grid;
+}
+#main-content {
+	flex: 1 0 auto;
+	width: 100%;
+	max-width: 60rem;
+	padding: @grid/2 @grid;
+}
+#site-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+	margin-bottom: @grid*2;
+	padding-bottom: @grid;
+}
+#site-identifier {
+	a {
+		text-decoration: none;
+		transition-duration: @fast;
+		transition-property: color;
+		&:hover {
+			color: @link;
+		}
+	}
+}
+#site-footer {
+	text-align: right;
+	font-size: @font-size-sm;
+	font-family: @heading-font;
+}
+
+details {
+	margin: @grid*2 0;
+}
+summary {
+	position: relative;
+	list-style: none;
+	border-bottom: 0.2em solid transparent;
+	transition-duration: @fast;
+	transition-property: border-bottom;
+	margin-bottom: @grid;
+	cursor: pointer;
+	overflow: hidden;
+	span {
+		position: absolute;
+		display: block;
+		height: 1em;
+		width: 1em;
+		top: 0;
+		right: 0;
+		font-size: @grid*4;
+		text-align: center;
+		margin-right: -@grid;
+		line-height: 0.8;
+		transition: @fast transform;
+		transform-origin: 50% 50%;
+	}
+	[open] & {
+		border-bottom-style: dashed;
+		border-bottom-color: @link;
+		span {
+			transform: rotate(135deg);
+		}
+	}
+	&:hover {
+		border-bottom-color: @link;
+		border-bottom-style: solid;
+	}
+	h2 {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#recommendation {
+	font-size: @grid*2;
+	line-height: 1.8;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	font-family: @serif;
+}
+#refresh {
+	margin-left: @grid/2;
+	float: right;
+}
+
+// CONTROLS
+
+button,
+.button {
+	cursor: pointer;
+	display: inline-block;
+	padding: 0 0.5em;
+	margin-right: @grid;
+	font-family: @heading-font;
+	font-size: @font-size-sm;
+	font-weight: bold;
+	border-radius: @border-radius;
+	color: @bg-color;
+	background-color: @text-color;
+	border: 0.25em solid @bg-color;
+	transition-duration: @fast;
+	transition-property: background-color, border-color;
+	&:last-child {
+		margin-right: 0;
+	}
+	&:hover,
+	&:focus {
+		background-color: var( --text-alt );
+		border-color: @link;
+	}
+}

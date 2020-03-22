@@ -1,0 +1,16 @@
+{
+	"links": [
+		{
+			"link": "https://witwat.net",
+			"adjective": "interesting",
+			"author": "Luke",
+			"dept": "home"
+		},
+		{
+			"link": "https://blorgspot.com",
+			"adjective": "funny",
+			"author": "Luke",
+			"dept": "home"
+		}
+	]
+}

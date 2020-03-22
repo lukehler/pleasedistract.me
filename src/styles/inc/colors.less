@@ -1,0 +1,48 @@
+// Define colors as custom properties.
+
+:root {
+	--bg-primary: #623;
+	--bg-secondary: #201;
+	--text: #ffe;
+	--text-alt: #fff;
+	--link: #3fd;
+}
+
+body {
+	background-image: linear-gradient(
+		45deg,
+		var(--bg-secondary) 0%,
+		var(--bg-primary) 30%,
+		var(--bg-primary) 50%,
+		var(--bg-secondary) 100%
+	);
+	background-size: 150% 150%;
+	background-attachment: fixed;
+}
+
+a {
+	color: @vdgray;
+	text-decoration-color: @link;
+	text-decoration-style: dashed;
+	&:hover {
+		color: inherit;
+		text-decoration-color: @link;
+		text-decoration-style: solid;
+	}
+}
+
+#site-header {
+	&::after {
+		content: "";
+		display: block;
+		margin-left: -@grid;
+		margin-right: -@grid;
+		width: calc(100% + @grid*2);
+		height: @grid/4;
+		background-image: linear-gradient(
+			270deg,
+			var(--text) 0%,
+			var(--link) 100%
+		);
+	}
+}
