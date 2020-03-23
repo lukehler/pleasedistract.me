@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "start": "node main",
-    "make": "grunt prod"
+    "make": "grunt prod",
+    "deploy": "git subtree push --prefix dest origin gh-pages"
   },
   "dependencies": {
     "json-server": "^0.16.1"
